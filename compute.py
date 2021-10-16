@@ -38,3 +38,16 @@ def compute_wave(wave, rangeL=0, rangeH=10, step=1):
         i += step
     print('')
     return [x, y]
+
+def compute_exponential(wave, rangeL=0, rangeH=10, step=1):
+    A, b, c = wave.A, wave.b, wave.c
+    x = np.array([])
+    y = np.array([])
+    i = rangeL
+    while i < rangeH:
+        print('Calculating graph ' + str(round((i - rangeL) * 100 / (rangeH - rangeL), 2)) + '%', end="\r", flush=True)
+        x = np.append(x, i)
+        y = np.append(y, A*np.exp(-b*i)+c)
+        i += step
+    print('')
+    return [x, y]

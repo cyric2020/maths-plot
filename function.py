@@ -17,3 +17,9 @@ class Wave:
         self.b = b
         self.c = c
         self.d = d
+
+class Exponential:
+    def __init__(self, A=1, b=1, c=0):
+        self.A = A
+        self.b = b
+        self.c = c

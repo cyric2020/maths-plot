@@ -26,14 +26,17 @@ damp_wave = function.Damp_Wave(sin, amp, damp, period, shift, elevation)
 
 compute_result = compute.compute_wave_damp(damp_wave, rangeLow, rangeHigh, step)
 
-wave = function.Wave(0, 1, period, 0, 0)
+wave = function.Wave(0, amp, period, 0, 0)
 wave_compute = compute.compute_wave(wave, rangeLow, rangeHigh, step)
 
-print('\nStats: ')
+expon = function.Exponential(amp, damp, 0)
+expon_compute = compute.compute_exponential(expon, rangeLow, rangeHigh, step)
 
-table = [['Y Max', 'b'], ['Tangent Max', 'd']]
-print(tabulate(table, tablefmt="grid"))
+# print('\nStats: ')
 
-graph.draw([[compute_result[0], compute_result[1],'r-'], [wave_compute[0], wave_compute[1], 'b-']])
+# table = [['Y Max', 'b'], ['Tangent Max', 'd']]
+# print(tabulate(table, tablefmt="grid"))
+
+graph.draw([[compute_result[0], compute_result[1],'r-'], [wave_compute[0], wave_compute[1], 'b-'], [expon_compute[0], expon_compute[1], 'g-']])
 
 # window.mainloop()
