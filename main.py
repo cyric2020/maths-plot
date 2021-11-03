@@ -16,7 +16,7 @@ step = 0.001
 
 
 sin = 0
-amp = 1
+amp = 7
 damp = 0.8
 period = 2 * math.pi
 shift = 0
@@ -36,7 +36,7 @@ expon_compute = compute.compute_exponential(expon, rangeLow, rangeHigh, step)
 
 # table = [['Y Max', 'b'], ['Tangent Max', 'd']]
 # print(tabulate(table, tablefmt="grid"))
-
+# graph.draw([[wave_compute[0], wave_compute[1], 'b-']])
 graph.draw([[compute_result[0], compute_result[1],'r-'], [wave_compute[0], wave_compute[1], 'b-'], [expon_compute[0], expon_compute[1], 'g-']])
 
 # window.mainloop()
