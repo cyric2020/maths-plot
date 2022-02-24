@@ -23,3 +23,12 @@ class Exponential:
         self.A = A
         self.b = b
         self.c = c
+
+class Linear_Bounce:
+    def __init__(self, BugA_X, BugA_Y, BugB_X, BugB_Y, n, m):
+        self.BugA_X = BugA_X
+        self.BugA_Y = BugA_Y
+        self.BugB_X = BugB_X
+        self.BugB_Y = BugB_Y
+        self.n = n
+        self.m = m
