@@ -26,6 +26,11 @@ damp_wave = function.Damp_Wave(sin, amp, damp, period, shift, elevation)
 
 compute_result = compute.compute_wave_damp(damp_wave, rangeLow, rangeHigh, step)
 
+with open("output.csv", "w") as file:
+    for i in range(len(compute_result[0])):
+        file.write(str(compute_result[0][i]) + "," + str(compute_result[1][i]) + "\n")
+
+
 # for result in compute_result[1]:
 #     print(result) 
 
